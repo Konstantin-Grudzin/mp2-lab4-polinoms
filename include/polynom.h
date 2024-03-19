@@ -40,11 +40,18 @@ class Polynom
 	void destroy_duplicates();
 	void delete_zeros();
 	void sort();
+	
 public:
+	
 	Polynom();
 	Polynom(const List<Monom>& monom);
 
-	
+	void prep()
+	{
+		sort();
+		destroy_duplicates();
+		delete_zeros();
+	}
 	void push_back(Monom& m);
 	List<Monom> merge(List<Monom> &b);
 	List<Monom> GetListMonom(){ return polynom; }

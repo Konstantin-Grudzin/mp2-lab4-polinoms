@@ -32,10 +32,10 @@ void Get_Polynom(Polynom& tmp)
 			std::cin >> pow;
 		}
 		Monom tmp(coeff, pow);
-		t1.push_back(tmp);
 	}
-	t1.sort();
 	Polynom t2(t1);
+	t2.prep();
+	std::cout << "Your monom is:" << " " << t2 << std::endl;
 	tmp = t2;
 }
 void delete_polynom(std::vector<Polynom> &mas,int pos)
