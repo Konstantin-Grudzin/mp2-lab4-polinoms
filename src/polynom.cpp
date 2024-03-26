@@ -149,8 +149,15 @@ List<Monom> Polynom::merge(List<Monom> &b)//возвращает "слитый" список БЕЗ ДУБЛИ
 }
 void Polynom::delete_zeros()
 {
-	if (polynom.head() == nullptr) return;
 	Node<Monom>* i = polynom.head();
+	while (i != nullptr && i->data.GetCoef() == 0)
+	{
+		Node<Monom>* j = i;
+		i = i->next;
+		delete j;
+		polynom.SetHead(i);
+	}
+	if (polynom.head() == nullptr) return;
 	while (i->next != nullptr)
 	{
 		Node<Monom>* j = i->next;

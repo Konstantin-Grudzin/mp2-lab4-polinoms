@@ -17,7 +17,7 @@ void print_vector_of_polynoms(std::vector<Polynom>& mas)
 }
 void Get_Polynom(Polynom& tmp)
 {
-	std::cout << "How much monoms do you have?";
+	std::cout << "How much monoms do you have?\n";
 	int size; std::cin >> size;
 	List<Monom> t1;
 	for (int i = 0; i < size; ++i)
@@ -32,11 +32,13 @@ void Get_Polynom(Polynom& tmp)
 			std::cin >> pow;
 		}
 		Monom tmp(coeff, pow);
+		t1.push_back(tmp);
 	}
 	Polynom t2(t1);
 	t2.prep();
 	std::cout << "Your monom is:" << " " << t2 << std::endl;
 	tmp = t2;
+	wait();
 }
 void delete_polynom(std::vector<Polynom> &mas,int pos)
 {

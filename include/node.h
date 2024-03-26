@@ -52,12 +52,13 @@ public:
     void clear()
     {
         //Удаляем элементы
-        while (Head->next != nullptr)
+        while (Head!=nullptr && Head->next != nullptr)
         {
             Head = Head->next;
             delete Head->prev;
         }
-        delete Head;
+        if(Head != nullptr)
+            delete Head;
         //--------------------
         Head = Tail = nullptr;
     }
